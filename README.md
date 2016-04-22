@@ -39,9 +39,9 @@ let t2 = expand([1, 4, 2, ellipsis, -3]);
 console.log(t2);// [1, 4, 2, 0, -2, -3]
 ```
 
-- you can use more than one ellipsis
+- you can use more than one ellipsises
 
-You can use more than one ellipsis in one array, the ellipsis will be reduced one by one.
+You can use more than one ellipsises in one array, the ellipsises will be reduced one by one.
 
 4, 6, ..., 9, ..., 12 => 4, 6, 8, 9, ..., 12 => 4, 6, 8, 9, 10, 11, 12
 
