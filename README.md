@@ -70,6 +70,6 @@ let ret = E(add, [1, 2, 4, ellipsis, 9]);
 console.log(ret); // 30
 ```
 
-In the code, E(add, [1, 2, 4, ellipsis, 9]) means 1 + 2 + 4 + 6 + 8+ 9
+In the code, E(add, [1, 2, 4, ellipsis, 9]) means 1 + 2 + 4 + ... + 9
 
 E(add, [1, 2, 4, ellipsis, 9]), first, expand [1, 2, 4, ellipsis, 9], then use add operation on the list.
