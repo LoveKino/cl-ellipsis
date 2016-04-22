@@ -1,0 +1,30 @@
+{
+  "name": "cl-ellipsis",
+  "version": "0.0.1",
+  "description": "Ellipsis DSL for node, construct something like a1,a2, ..., an",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoveKino/cl-ellipsis.git"
+  },
+  "keywords": [
+    "ellipsis",
+    "repeat",
+    "loop",
+    "DSL"
+  ],
+  "author": "ddchen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LoveKino/cl-ellipsis/issues"
+  },
+  "homepage": "https://github.com/LoveKino/cl-ellipsis#readme",
+  "devDependencies": {
+    "cl-jsoneq": "0.0.2",
+    "defcomment": "0.0.9",
+    "mocha": "^2.4.5"
+  }
+}
