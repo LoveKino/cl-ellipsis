@@ -1,8 +1,10 @@
 'use strict';
 
 let exp = require('./expand');
+let ellipsis = require('./const').ellipsis;
+
 let expand = exp.expand;
-let ellipsis = exp.ellipsis;
+let tagList = exp.tagList;
 
 let E = (op, args) => {
     if (!isFunction(op)) throw new TypeError('need function as first argument');
@@ -43,5 +45,6 @@ let isArray = v => v && typeof v === 'object' && typeof v.length === 'number';
 module.exports = {
     E,
     ellipsis,
-    expand
+    expand,
+    tagList
 };
