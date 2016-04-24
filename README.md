@@ -31,6 +31,7 @@ Expand a list by writing ellipsis.
 ```js
 let pattern = require('cl-ellipsis');
 let ellipsis = pattern.ellipsis;
+let expand = pattern.expand;
 
 let t1 = expand([1, 2, 3, ellipsis, 9]); 
 console.log(t1);// [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -50,6 +51,7 @@ code example
 ```js
 let pattern = require('cl-ellipsis');
 let ellipsis = pattern.ellipsis;
+let expand = pattern.expand;
 
 let t1 = expand([4, 6, ellipsis, 9, ellipsis, 12]); 
 console.log(t1);// [4, 6, 8, 9, 10, 11, 12]
@@ -64,6 +66,7 @@ let pattern = require('cl-ellipsis');
 
 let E = pattern.E;
 let ellipsis = pattern.ellipsis;
+
 let add = (a, b) => a + b;
 
 let ret = E(add, [1, 2, 4, ellipsis, 9]);
