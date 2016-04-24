@@ -94,7 +94,7 @@ let expandEllip = (list, ellipsisIndex) => {
     let step = getStep(list, ellipsisIndex);
     let start = list[ellipsisIndex - 1];
     let end = list[ellipsisIndex + 1];
-    let eps = range(start, end, step);
+    let eps = section(start, end, step);
     eps.pop();
     eps.shift();
     let prev = list.slice(0, ellipsisIndex);
@@ -145,10 +145,6 @@ let getStep = (list, ellipsisIndex) => {
  * ## test
 [
     [
-        [1, 5, 0],
-        [1, 5]
-    ],
-    [
         [1, 6, 2],
         [1, 3, 5, 6]
     ],
@@ -156,29 +152,52 @@ let getStep = (list, ellipsisIndex) => {
         [6, 1, -2],
         [6, 4, 2, 1]
     ],
+    [
+        [6, 4],
+        [6, 5, 4]
+    ],
+    [
+        [4, 6],
+        [4, 5, 6]
+    ],
+    [
+        [0, 0],
+        [0]
+    ],
+    [
+        [4, 2, 1],
+        [4, 2]
+    ],
+    [
+        [1, 5, 0],
+        [1, 5]
+    ],
+    [
+        [2, 4, -1],
+        [2, 4]
+    ]
 ]
 */
 
-let range = (start, end, step) => {
-    let ret = [];
-    if (step === 0) {
-        ret = [start, end];
-    } else if (step > 0) {
-        for (var i = start; i <= end; i += step) {
+let section = (start, end, step) => {
+    let defStep = 1;
+    if (end < start) defStep = -1;
+    else if (end === start) defStep = 0;
+    if (step === undefined) step = defStep;
+    let ret = [start];
+    if (step > 0) {
+        for (var i = start + step; i < end; i += step) {
             ret.push(i);
         }
-        if (i - step < end) {
-            ret.push(end);
-        }
     } else {
-        for (var j = start; j >= end; j += step) {
+        for (var j = start + step; j > end; j += step) {
             ret.push(j);
         }
-        if (j - step > end) {
-            ret.push(end);
-        }
     }
+
+    start !== end && ret.push(end);
     return ret;
 };
+
 
 module.exports = expandNumberList;
