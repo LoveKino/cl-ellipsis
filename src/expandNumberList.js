@@ -73,9 +73,9 @@ let prevProcess = (list) => {
             [1, 2, '...', 5], 2
         ],
         {
-            prev: [1, 2],
-            expandedEllipsis: [3, 4],
-            next: [5]
+            prev: [1],
+            expandedEllipsis: [2, 3, 4, 5],
+            next: []
         }
     ],
     [
@@ -83,9 +83,19 @@ let prevProcess = (list) => {
             [2, 4, '...', 9, 10], 2
         ],
         {
-            prev: [2, 4],
-            expandedEllipsis: [6, 8],
-            next: [9, 10]
+            prev: [2],
+            expandedEllipsis: [4, 6, 8, 9],
+            next: [10]
+        }
+    ],
+    [
+        [
+            [0, '...', 0], 1
+        ],
+        {
+            prev: [],
+            expandedEllipsis: [0],
+            next: []
         }
     ]
 ]
@@ -95,11 +105,9 @@ let expandEllip = (list, ellipsisIndex) => {
     let start = list[ellipsisIndex - 1];
     let end = list[ellipsisIndex + 1];
     let eps = section(start, end, step);
-    eps.pop();
-    eps.shift();
-    let prev = list.slice(0, ellipsisIndex);
+    let prev = list.slice(0, ellipsisIndex - 1);
     let expandedEllipsis = eps;
-    let next = list.slice(ellipsisIndex + 1);
+    let next = list.slice(ellipsisIndex + 2);
     return {
         prev,
         expandedEllipsis,
@@ -120,6 +128,11 @@ let expandEllip = (list, ellipsisIndex) => {
         [
             [2, 5, 7, '...', 12, 11], 3
         ], 2
+    ],
+    [
+        [
+            [0, '...', 0], 1
+        ], 0
     ]
 ]
 */
