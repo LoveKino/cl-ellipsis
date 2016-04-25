@@ -47,15 +47,20 @@ let prevProcess = (list) => {
     for (let i = 0; i < list.length; i++) {
         let item = list[i];
         if (item !== ellipsis) {
-            if(typeof item !== 'number') {
-                throw new TypeError('Expect number in expanded list, but got ' + item);
-            }
             ret.push(item);
+            if(lastEllipsis && typeof item !== 'number') {
+                throw new Error('the one after ellipsis must be number');
+            }
             lastEllipsis = false;
         } else {
             if (lastEllipsis) {
                 continue;
             } else {
+                // check prev item
+                let prev = list[i - 1];
+                if(typeof prev !== 'number') {
+                    throw new Error('the one before ellipsis must be number');
+                }
                 ret.push(item);
                 lastEllipsis = true;
             }
@@ -139,7 +144,11 @@ let expandEllip = (list, ellipsisIndex) => {
 let getStep = (list, ellipsisIndex) => {
     let prev = list[ellipsisIndex - 1];
     let next = list[ellipsisIndex + 1];
-    if (ellipsisIndex === 1) {
+
+    let prevD = list[ellipsisIndex - 2];
+    if (ellipsisIndex > 1 && typeof prevD === 'number') {
+        return prev - prevD;
+    } else {
         if (prev < next) {
             return 1;
         } else if (prev === next) {
@@ -147,9 +156,6 @@ let getStep = (list, ellipsisIndex) => {
         } else {
             return -1;
         }
-    } else {
-        let prevD = list[ellipsisIndex - 2];
-        return prev - prevD;
     }
 };
 

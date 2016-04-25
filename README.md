@@ -67,6 +67,17 @@ let ret = expand('1 2 ... 6');
 console.log(ret); // [1, 2, 3, 4, 5, 6]
 ```
 
+- you can mix array
+
+```js
+let pattern = require('cl-ellipsis');
+let ellipsis = pattern.ellipsis;
+let expand = pattern.expand;
+
+let t1 = expand(['a', null, 6, ellipsis, 9]); 
+console.log(t1);// ['a', null, 7, 8, 9]
+```
+
 ### expand array
 
 It's almost the same with number list, but point out which array. See the code:
