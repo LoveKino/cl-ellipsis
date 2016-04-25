@@ -57,6 +57,16 @@ let t1 = expand([4, 6, ellipsis, 9, ellipsis, 12]);
 console.log(t1);// [4, 6, 8, 9, 10, 11, 12]
 ```
 
+- you can just use string instead of array
+
+```js
+let pattern = require('cl-ellipsis');
+let ellipsis = pattern.ellipsis;
+
+let ret = expand('1 2 ... 6');
+console.log(ret); // [1, 2, 3, 4, 5, 6]
+```
+
 ### expand array
 
 It's almost the same with number list, but point out which array. See the code:
