@@ -2,11 +2,16 @@
 
 let expandNumberList = require('./expandNumberList');
 let constaints = require('./const');
+let parser = require('./parser');
 
 let tagedList = constaints.tagedList;
 let tagedNumbers = constaints.tagedNumbers;
+let parse = parser.parse;
 
 let expand = (list) => {
+    if(typeof list === 'string') {
+        list = parse(list);
+    }
     let fragments = divide(list);
     let rets = [];
     for (let i = 0; i < fragments.length; i++) {

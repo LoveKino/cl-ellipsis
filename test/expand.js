@@ -33,4 +33,11 @@ describe('expand', () => {
         let ret = expand([-1, tagList([2, 4, ellipsis, 7], A), 9]);
         assert.equal(jsoneq(ret, [-1, 2, 0, 38, -1, 9]), true);
     });
+
+    it('string', () => {
+        let ret = expand('1 2 ... 6');
+        let ret2 = expand('2 4 ... 8 9 ... 12');
+        assert.equal(jsoneq(ret, [1, 2, 3, 4, 5, 6]), true);
+        assert.equal(jsoneq(ret2, [2, 4 , 6, 8, 9 , 10, 11, 12]), true);
+    });
 });

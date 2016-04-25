@@ -8,7 +8,7 @@ Ellipsis DSL for node, construct something like a1,a2, ..., an
 
 ## usage
 
-### expand list
+### expand number list
 
 Expand a list by writing ellipsis.
 
@@ -55,6 +55,20 @@ let expand = pattern.expand;
 
 let t1 = expand([4, 6, ellipsis, 9, ellipsis, 12]); 
 console.log(t1);// [4, 6, 8, 9, 10, 11, 12]
+```
+
+### expand array
+
+It's almost the same with number list, but point out which array. See the code:
+
+```js
+let pattern = require('cl-ellipsis');
+let ellipsis = pattern.ellipsis;
+let expand = pattern.expand;
+
+let A = [3, 5, 2, 9, 0, 20, 38, -1, -20];
+let ret = expand([-1, tagList([2, 4, ellipsis, 7], A), 9]);
+console.log(ret); // [-1, 2, 0, 38, -1, 9]
 ```
 
 ### reduce
