@@ -2,6 +2,8 @@
 
 Ellipsis DSL for node, construct something like a1,a2, ..., an
 
+[![Build Status](https://travis-ci.org/LoveKino/cl-ellipsis.svg)](https://travis-ci.org/LoveKino/cl-ellipsis.svg)
+
 ## install
 
 `npm i cl-ellipsis --save`
