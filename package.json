@@ -4,7 +4,8 @@
   "description": "Ellipsis DSL for node, construct something like a1,a2, ..., an",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.js"
+    "test": "mocha test/**/*.js",
+    "cover": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   "homepage": "https://github.com/LoveKino/cl-ellipsis#readme",
   "devDependencies": {
     "cl-jsoneq": "0.0.2",
+    "coveralls": "^2.11.9",
     "defcomment": "0.0.9",
+    "istanbul": "^0.4.3",
     "mocha": "^2.4.5"
   }
 }

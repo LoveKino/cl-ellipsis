@@ -66,6 +66,7 @@ let prevProcess = (list) => {
             }
         }
     }
+
     return ret;
 };
 
@@ -217,6 +218,5 @@ let section = (start, end, step) => {
     start !== end && ret.push(end);
     return ret;
 };
-
 
 module.exports = expandNumberList;

@@ -21,4 +21,33 @@ describe('pattern', () => {
         let ret = E((a, b) => a + b, [3, 2, 9]);
         assert.equal(ret, 3 + 2 + 9);
     });
+
+    it('type:op', (done) => {
+        try {
+            E(null);
+        } catch (err) {
+            if (err.toString().indexOf('need function') !== -1) {
+                done();
+            } else {
+                done(err);
+            }
+        }
+    });
+
+    it('type:args', (done) => {
+        try {
+            E(() => {}, 10);
+        } catch (err) {
+            if (err.toString().indexOf('need array') !== -1) {
+                done();
+            } else {
+                done(err);
+            }
+        }
+    });
+
+    it('type:args', () => {
+        let ret = E(() => {}, []);
+        assert.equal(ret, null);
+    });
 });
