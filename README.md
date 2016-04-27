@@ -8,7 +8,6 @@ Ellipsis DSL for node, construct something like a1,a2, ..., an
 
 `npm i cl-ellipsis --save`
 
-
 ## usage
 
 ### expand number list
