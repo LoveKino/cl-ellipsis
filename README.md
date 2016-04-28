@@ -3,6 +3,8 @@
 Ellipsis DSL for node, construct something like a1,a2, ..., an
 
 [![Build Status](https://travis-ci.org/LoveKino/cl-ellipsis.svg)](https://travis-ci.org/LoveKino/cl-ellipsis.svg)
+[![Coverage Status](https://coveralls.io/repos/github/LoveKino/cl-ellipsis/badge.svg?branch=master)](https://coveralls.io/github/LoveKino/cl-ellipsis?branch=master)
+
 
 ## install
 
