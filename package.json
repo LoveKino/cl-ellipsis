@@ -1,6 +1,6 @@
 {
   "name": "cl-ellipsis",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Ellipsis DSL for node, construct something like a1,a2, ..., an",
   "main": "index.js",
   "scripts": {
