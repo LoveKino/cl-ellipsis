@@ -1,6 +1,4 @@
-const ellipsis = {
-    __type: 'ellipsis'
-};
+const ellipsis = '...';
 
 const tagedList = {
     __type: 'tagedList'
